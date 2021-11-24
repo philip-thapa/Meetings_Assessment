@@ -1,7 +1,7 @@
 import csv
 
 
-def create_employee_csv():
+def test_create_employee_csv():
     headers = ["Employee Name", "Date", "In Time",
                "Out Time", "Break Time", "Employee Meeting"]
     try:
@@ -11,3 +11,7 @@ def create_employee_csv():
 
     except Exception as e:
         print("Cannot create a employee csv file", e)
+    emp.close()
+
+
+# test_create_employee_csv()

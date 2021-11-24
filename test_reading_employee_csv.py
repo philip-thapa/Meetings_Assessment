@@ -1,8 +1,9 @@
 '''
-Nodule to read the csv file
+Module to read the csv file
 '''
 
 import csv
+
 
 def test_read_from_csv_file():
     '''
@@ -13,11 +14,13 @@ def test_read_from_csv_file():
         with open('Employee_meeting.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
             header = next(csv_reader)
-            print("HEADER", header)
-            assert ['Employee Name', 'Date', 'In Time', 'Out Time', 'Break Time', 'Employee Meeting'] == header
+            # print("HEADER", header)
+            assert ['Employee Name', 'Date', 'In Time', 'Out Time',
+                    'Break Time', 'Employee Meeting'] == header
 
             for line in csv_reader:
-                print("On " + line[1] + " " + line[0] + " In time was " + line[2] + " out time was "+ line[3] + " break time was "+line[4] + " and employee meeting was " + line[5])
+                print("On " + line[1] + " " + line[0] + " In time was " + line[2] + " out time was " +
+                      line[3] + " break time was "+line[4] + " and employee meeting was " + line[5])
     except NameError:
         print("File not found")
     except:
