@@ -8,10 +8,10 @@ def test_create_employee_csv():
         with open("Employee_meeting.csv", 'w') as emp:
             employee = csv.writer(emp)
             employee.writerow(headers)
+            emp.close
+            return headers
 
-    except Exception as e:
-        print("Cannot create a employee csv file", e)
-    emp.close()
-
+    except:
+        print("Cannot create a employee csv file")
 
 # test_create_employee_csv()

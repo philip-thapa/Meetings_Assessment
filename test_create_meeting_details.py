@@ -8,4 +8,4 @@ def test_create_meeting_available_details():
         meeting.writerow(headers)
 
 
-# create_meeting_available_details()
+test_create_meeting_available_details()

@@ -29,4 +29,4 @@ def test_read_from_csv_file():
         csv_file.close()
 
 
-test_read_from_csv_file()
+# test_read_from_csv_file()

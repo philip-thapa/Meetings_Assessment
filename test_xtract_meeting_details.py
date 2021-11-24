@@ -1,7 +1,7 @@
 import csv
 
 
-def fetch_meeting_details(start_duration_time, end_duration_time, date):
+def test_fetch_meeting_details(start_duration_time, end_duration_time, date):
     with open("Employee_meeting.csv", 'r') as emp:
         reader = csv.reader(emp)
         next(reader)

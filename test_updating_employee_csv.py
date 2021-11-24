@@ -1,6 +1,4 @@
 import csv
-from os import write
-
 # def update_epmoyee_csv():
 
 #     with open('Employee_meeting.csv', 'r') as emp:
@@ -64,4 +62,4 @@ def update_epmoyee_csv():
         print("Something went wrong")
 
 
-update_epmoyee_csv()
+# update_epmoyee_csv()
