@@ -49,3 +49,4 @@ def test_fetch_meeting_details():
     assert True == fetch_meeting_details(2, 7, "02 Nov 21")
     assert False == fetch_meeting_details(4, 7, "03 Nov 21")
     assert False == fetch_meeting_details(2, 3, "03 Nov 21")
+    assert True == fetch_meeting_details(2, 4, "01 Nov 21")
