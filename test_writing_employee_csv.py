@@ -1,7 +1,14 @@
+'''
+module to write into employee csv file
+'''
+
 import csv
 
 
 def test_writing_into_csv():
+    '''
+    method to write into employee csv file
+    '''
     # try:
     #     date = input("Enter the date: ")
     #     in_time = input("Enter In time: ")

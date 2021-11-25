@@ -1,3 +1,7 @@
+'''
+module to update the in time, out time and break time
+'''
+
 import csv
 # def update_epmoyee_csv():
 
@@ -25,9 +29,13 @@ import csv
 
 
 def update_epmoyee_csv():
+    '''
+    method to update the in time, out time and break time of an employee
+    '''
+
     try:
         updating_field_input = int(input(
-            "Select the option from below to update: \n 1. In time \n 2. Out Time \n 3.Break Time \n"))
+            "Select the option from below to update: \n 1. In time \n 2. Out Time \n 3. Break Time \n"))
         date = input("Enter the date: ")
         lst = []
         found = False
@@ -58,6 +66,8 @@ def update_epmoyee_csv():
                     print("Successfully updated")
             else:
                 print("Invalid data provided")
+    except FileNotFoundError as e:
+        print("File not found ", e)
     except:
         print("Something went wrong")
 

@@ -8,7 +8,6 @@ import csv
 def test_read_from_csv_file():
     '''
     Method to read the employee meeting csv file
-    :return:
     '''
     try:
         with open('Employee_meeting.csv', 'r') as csv_file:

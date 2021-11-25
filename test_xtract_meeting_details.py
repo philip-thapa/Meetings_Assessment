@@ -1,7 +1,14 @@
+'''
+module to extract the meeting time of an employee and check whether he is available or not
+'''
 import csv
 
 
-def test_fetch_meeting_details(start_duration_time, end_duration_time, date):
+def fetch_meeting_details(start_duration_time, end_duration_time, date):
+    '''
+    method to check whether the employee is available for the meeting based on the given time interval
+    Based on his availability Employee availability csv file will be updated
+    '''
     with open("Employee_meeting.csv", 'r') as emp:
         reader = csv.reader(emp)
         next(reader)
@@ -14,21 +21,20 @@ def test_fetch_meeting_details(start_duration_time, end_duration_time, date):
 
         for row in reader:
             if row[1] == date:
-                if (int((row[5])[:2]) >= int(start_duration_time) and int((row[5])[:2]) <= int(end_duration_time)) or (int((row[5])[:2]) <= int(start_duration_time) and int((row[5])[:2]) >= int(end_duration_time)):
-                    # if (int(start_duration_time) >= 1 and int(end_duration_time) <= 7 and int((row[5])[:2]) >= int(start_duration_time) and int((row[5])[:2]) <= int(end_duration_time)) or (int(start_duration_time) >= 10 and int(end_duration_time) <= 12 and int((row[5])[:2]) >= int(start_duration_time) and int((row[5])[:2]) <= int(end_duration_time)):
+                if (int(start_duration_time) <= int((row[5])[:2]) <= int(end_duration_time)) and (int((row[5])[:2]) != int((row[6])[:2])):
                     with open("meeting_availability_details.csv", 'a') as mee:
                         field_name = ["Meeting Date", "Availability"]
-                        Dict = {"Meeting Date": date, "Availability": "Yes"}
+                        availability_details = {"Meeting Date": date, "Availability": "Yes"}
                         appender = csv.DictWriter(mee, fieldnames=field_name)
-                        appender.writerow(Dict)
+                        appender.writerow(availability_details)
                         mee.close()
                         return True
                 else:
                     with open("meeting_availability_details.csv", 'a') as mee:
                         field_name = ["Meeting Date", "Availability"]
-                        Dict = {"Meeting Date": date, "Availability": "No"}
+                        availability_details = {"Meeting Date": date, "Availability": "No"}
                         appender = csv.DictWriter(mee, fieldnames=field_name)
-                        appender.writerow(Dict)
+                        appender.writerow(availability_details)
                         mee.close()
                         return False
 
@@ -36,6 +42,10 @@ def test_fetch_meeting_details(start_duration_time, end_duration_time, date):
 
 
 def test_fetch_meeting_details():
+    '''
+    method to call fetch_meeting_details that either return true or false
+    '''
     assert True == fetch_meeting_details(1, 7, "01 Nov 21")
-    assert True == fetch_meeting_details(1, 7, "02 Nov 21")
+    assert True == fetch_meeting_details(2, 7, "02 Nov 21")
     assert False == fetch_meeting_details(4, 7, "03 Nov 21")
+    assert False == fetch_meeting_details(2, 3, "03 Nov 21")
