@@ -33,6 +33,8 @@ def test_writing_into_csv():
                     "Out Time": "07:10", "Break Time": "02:00", "Employee Meeting": "03:00"}]
     test_case_3 = [{"Employee Name": "Philip", "Date": "03 Nov 21", "In Time": "09:40",
                     "Out Time": "07:10", "Break Time": "02:00", "Employee Meeting": "01:00"}]
+    test_case_4 = [{"Employee Name": "Philip", "Date": "04 Nov 21", "In Time": "09:42",
+                    "Out Time": "07:11", "Break Time": "02:00", "Employee Meeting": "02:00"}]
     fields = ["Employee Name", "Date", "In Time",
               "Out Time", "Break Time", "Employee Meeting"]
     filename = "Employee_meeting.csv"
@@ -47,6 +49,7 @@ def test_writing_into_csv():
         assert len(test_case_2[0]) == 6
         append_employee.writerows(test_case_3)
         assert len(test_case_3[0]) == 6
+        append_employee.writerows(test_case_4)
     emp.close()
 
 

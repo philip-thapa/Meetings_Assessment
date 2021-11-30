@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/UpdatedMeetingCode/Employess.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/meeting_availability_details.csv">
           <value>
             <Attribute>

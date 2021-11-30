@@ -66,8 +66,6 @@ def update_epmoyee_csv():
                     print("Successfully updated")
             else:
                 print("Invalid data provided")
-    except FileNotFoundError as e:
-        print("File not found ", e)
     except:
         print("Something went wrong")
 
