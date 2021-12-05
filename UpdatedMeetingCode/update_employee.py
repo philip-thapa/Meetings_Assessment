@@ -40,7 +40,7 @@ def update_epmoyee_csv():
                     writer.writerows(lst)
                     print("Successfully updated")
             else:
-                print("Invalid data provided")
+                print("Invalid ID provided")
     except:
         print("Something went wrong")
 
